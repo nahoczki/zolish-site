@@ -1,7 +1,8 @@
-import {useLayoutEffect} from 'react'
+import React, {useLayoutEffect} from 'react'
 import './App.css'
 import Preloader from "./components/Preloader";
 import { gsap } from "gsap";
+import Home from "./views/Home";
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
     return (
         <div className="App">
             <Preloader ref={e => (preLoaderRef = e)}/>
-            Test
+            <Home/>
         </div>
     )
 }
