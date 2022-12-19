@@ -19,14 +19,18 @@ const Home = () => {
 
     const HeaderText = styled.h1`
       z-index: 10;
-      font-family: 'Space Mono', monospace;
+      font-family: interstate-mono, monospace;
+      font-weight: 800;
+      font-style: normal;
     `
 
     const BodyText = styled.h1`
       z-index: 10;
       font-size: 20px;
-      font-weight: 300;
-      font-family: 'Space Mono', monospace;
+      line-height: 28px;
+      font-family: neuzeit-grotesk,sans-serif;
+      font-weight: 400;
+      font-style: normal;
     `
 
     const ProjectWrapper = styled.div`
@@ -41,7 +45,12 @@ const Home = () => {
 
       
       border-radius: 10px;
-      background-color: white;
+      background-color: #F433AB;
+    `
+
+    const HighlightedText = styled.span`
+      background-color: #F433AB;
+      font-weight: 600;
     `
 
     const ProjectBoxForeground = styled.div`
@@ -56,22 +65,24 @@ const Home = () => {
         margin-top: -7px;
         margin-left: -7px;
         cursor: pointer;
+        border: white solid 1.5px;
       }
     `
 
     return (
         <Wrapper>
+            <div className="gradient"></div>
             <TextWrapper>
                 <HeaderText>Hi 👋 <br/>
                     I’m Zoli</HeaderText>
                 <BodyText>
-                    I am a passionate Software Engineer and a recent graduate from the University of Wisconsin Parkside with a bachelors in Computer Science and a minor in Web Development. Along with my bachelor and minor I have a few certificates, most notably in Mobile Development.
+                    > I am a <HighlightedText>passionate</HighlightedText> Software Engineer and a recent graduate from the University of Wisconsin Parkside with a bachelors in <HighlightedText>Computer Science</HighlightedText> and a minor in <HighlightedText>Web Development</HighlightedText>. Along with my bachelor and minor I have a few certificates, most notably in <HighlightedText>Mobile Development</HighlightedText>.
                 </BodyText>
                 <BodyText>
-                    I have been working at The App Factory on the UWP campus for 4 years working with different clients around the Kenosha area creating apps and custom solutions.
+                    > I have been working at The App Factory on the UWP campus for 4 years working with different clients around the Kenosha area creating apps and custom solutions.
                 </BodyText>
                 <BodyText>
-                    Below are some of my personal projects
+                    Below are some of my personal <HighlightedText>projects</HighlightedText>
                 </BodyText>
                 <ProjectWrapper>
                     <ProjectBoxBackground>
