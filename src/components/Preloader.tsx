@@ -29,7 +29,7 @@ const Preloader = forwardRef<HTMLDivElement>((props, ref) => {
     return (
         <Wrapper ref={ref}>
             <Inner>
-                <h2>loading</h2>
+                <h2>loading (work in progress)</h2>
                 <ScaleLoader height={10} color={"white"} />
             </Inner>
         </Wrapper>
