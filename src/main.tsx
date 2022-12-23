@@ -2,10 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
+import {ProjectsProvider} from "./providers/ProjectsProvider";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <ProjectsProvider>
+          <App/>
+      </ProjectsProvider>
   </React.StrictMode>,
   document.getElementById('root')
 )

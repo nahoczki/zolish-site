@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import useProjects from "../providers/ProjectsProvider/projects";
+import ProjectCard from "../components/ProjectCard";
 
 const Home = () => {
 
@@ -14,7 +16,7 @@ const Home = () => {
       padding-top: 10rem;
       flex-direction: column;
       display: flex;
-      width: 50vw;
+      width: 864px;
     `
 
     const HeaderText = styled.h1`
@@ -41,37 +43,12 @@ const Home = () => {
       gap: 20px;
     `
 
-    const ProjectBoxBackground = styled.div`
-      width: 264px;
-      height: 150px;
-
-      
-      border-radius: 10px;
-      background-color: #F433AB;
-    `
-
     const HighlightedText = styled.span`
       background-color: #F433AB;
       font-weight: 600;
     `
 
-    const ProjectBoxForeground = styled.div`
-      flex: 1;
-      position: relative;
-      background-color: #171717;
-      width: 100%;
-      height: 100%;
-      border-radius: 10px;
-      border: #707070 solid 1px;
-      transition: all 0.1s ease-in;
-      :hover {
-        margin-top: -7px;
-        margin-left: -7px;
-        border: white solid 1.5px;
-      }
-    `
-
-    let items = [1, 2, 3, 4, 5, 6]
+    const projects = useProjects();
 
     return (
         <Wrapper>
@@ -90,11 +67,9 @@ const Home = () => {
                 </BodyText>
                 <ProjectWrapper>
                     {
-                        items.map(() => {
-                            return (<ProjectBoxBackground className="hoverable">
-                                <ProjectBoxForeground></ProjectBoxForeground>
-                            </ProjectBoxBackground>)
-                        })
+                        projects ? projects.map((project, i) => {
+                            return <ProjectCard project={project} key={i}/>
+                        }) : ""
                     }
                 </ProjectWrapper>
             </TextWrapper>

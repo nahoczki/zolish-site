@@ -26,12 +26,6 @@ function App() {
 
         const $bigBall = document.querySelector('.cursor__ball--big');
         const $smallBall = document.querySelector('.cursor__ball--small');
-        const $hoverables = document.querySelectorAll('.hoverable');
-
-        for (let i = 0; i < $hoverables.length; i++) {
-            $hoverables[i].addEventListener('mouseenter', onMouseHover);
-            $hoverables[i].addEventListener('mouseleave', onMouseHoverOut);
-        }
 
         function onMouseMove(e: { pageX: number; pageY: number; }) {
             gsap.to($bigBall, .4, {
@@ -41,17 +35,6 @@ function App() {
             gsap.to($smallBall, .1, {
                 x: e.pageX - 5,
                 y: e.pageY - 7
-            })
-        }
-
-        function onMouseHover() {
-            gsap.to($bigBall, .3, {
-                scale: 4
-            })
-        }
-        function onMouseHoverOut() {
-            gsap.to($bigBall, .3, {
-                scale: 1
             })
         }
     })
