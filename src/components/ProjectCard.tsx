@@ -41,6 +41,16 @@ const ProjectCard = ({project, key} : {project: Project, key: number}) => {
       height: 150px;
       border-radius: 10px;
       background-color: #F433AB;
+      @media (max-width: 900px) {
+        width: 100%;
+      }
+    `
+
+    const MainWrap = styled.div`
+      @media (max-width: 900px) {
+        position: relative;
+        width: 100%;
+      }
     `
 
     const ProjectBoxForeground = styled.div`
@@ -85,7 +95,7 @@ const ProjectCard = ({project, key} : {project: Project, key: number}) => {
     })
 
     return (
-        <div className="hoverable">
+        <MainWrap className="hoverable">
             <ProjectBoxBackground key={key}>
                 <ProjectBoxForeground>
                     <CardContent>
@@ -97,7 +107,7 @@ const ProjectCard = ({project, key} : {project: Project, key: number}) => {
                     </CardContent>
                 </ProjectBoxForeground>
             </ProjectBoxBackground>
-        </div>
+        </MainWrap>
 
     )
 }

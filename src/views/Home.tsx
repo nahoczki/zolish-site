@@ -13,10 +13,15 @@ const Home = () => {
     `
 
     const TextWrapper = styled.div`
-      padding-top: 10rem;
+      padding-top: 6rem;
       flex-direction: column;
       display: flex;
       width: 864px;
+      @media (max-width: 900px) {
+        width: 80%;
+        padding: 20px;
+        padding-top: 5rem;
+      }
     `
 
     const HeaderText = styled.h1`
@@ -36,11 +41,17 @@ const Home = () => {
     `
 
     const ProjectWrapper = styled.div`
+      position: relative;
       margin-top: 25px;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       gap: 20px;
+
+      @media (max-width: 900px) {
+        flex-direction: column;
+        width: 100%;
+      }
     `
 
     const HighlightedText = styled.span`
