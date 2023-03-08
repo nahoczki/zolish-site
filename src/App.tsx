@@ -24,15 +24,10 @@ function App() {
     useEffect(() => {
         document.body.addEventListener('mousemove', onMouseMove);
 
-        const $bigBall = document.querySelector('.cursor__ball--big');
-        const $smallBall = document.querySelector('.cursor__ball--small');
+        const $square = document.querySelector('.cursor__square');
 
         function onMouseMove(e: { pageX: number; pageY: number; }) {
-            gsap.to($bigBall, .4, {
-                x: e.pageX - 15,
-                y: e.pageY - 15
-            })
-            gsap.to($smallBall, .1, {
+            gsap.to($square, .1, {
                 x: e.pageX - 5,
                 y: e.pageY - 7
             })

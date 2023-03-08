@@ -74,7 +74,7 @@ const Home = () => {
                     - I have been working at The App Factory on the UWP campus for 4 years working with different clients around the Kenosha area creating apps and custom solutions.
                 </BodyText>
                 <BodyText>
-                    Below are some of my personal <HighlightedText>projects</HighlightedText>
+                    Below are some of my personal projects
                 </BodyText>
                 <ProjectWrapper>
                     {

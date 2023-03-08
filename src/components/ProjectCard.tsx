@@ -9,6 +9,7 @@ const ProjectCard = ({project, key} : {project: Project, key: number}) => {
       font-family: interstate-mono, monospace;
       font-weight: 800;
       font-style: normal;
+      transition: all 0.5s ease;
     `
 
     const CardBody = styled.div`
@@ -38,7 +39,7 @@ const ProjectCard = ({project, key} : {project: Project, key: number}) => {
 
     const ProjectBoxBackground = styled.div`
       width: 264px;
-      height: 150px;
+      height: 200px;
       border-radius: 10px;
       background-color: #F433AB;
       @media (max-width: 900px) {
@@ -66,15 +67,34 @@ const ProjectCard = ({project, key} : {project: Project, key: number}) => {
         margin-top: -7px;
         margin-left: -7px;
         border: white solid 1.5px;
+        height: 200px;
+      }
+
+      :hover .background {
+        height: 0px;
       }
       
       :hover .line {
         background-position: 100% 100%;
+        width: 25%;
+        height: 2px;
+      }
+
+      :hover .title {
+        font-size: 10px;
+      }
+
+      :hover .body {
+        line-height: 20px;
+        font-weight: 400;
+        white-space: pre-line;
+        text-overflow: ellipsis;
+        font-style: normal;
       }
     `
 
     useEffect(() => {
-        const $bigBall = document.querySelector('.cursor__ball--big');
+        const $square = document.querySelector('.cursor__square');
         const $hoverables = document.querySelectorAll('.hoverable');
 
         for (let i = 0; i < $hoverables.length; i++) {
@@ -83,25 +103,27 @@ const ProjectCard = ({project, key} : {project: Project, key: number}) => {
         }
 
         function onMouseHover() {
-            gsap.to($bigBall, .3, {
-                scale: 8
+            gsap.to($square, .3, {
+                scale: 3,
+                rotation: 45
             })
         }
         function onMouseHoverOut() {
-            gsap.to($bigBall, .3, {
-                scale: 1
+            gsap.to($square, .3, {
+                scale: 1,
+                rotation: 0,
             })
         }
     })
 
     return (
         <MainWrap className="hoverable">
-            <ProjectBoxBackground key={key}>
+            <ProjectBoxBackground key={key} className="background">
                 <ProjectBoxForeground>
                     <CardContent>
-                        <CardTitle>{project.title}</CardTitle>
+                        <CardTitle className={"title"}>{project.title}</CardTitle>
                         <Line className={"line"}/>
-                        <CardBody>
+                        <CardBody className="body">
                             {project.description}
                         </CardBody>
                     </CardContent>
