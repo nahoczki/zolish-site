@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 import styled from "styled-components";
 import {Project} from "../providers/ProjectsProvider";
 import {gsap} from "gsap";
+import {AiFillGithub} from "react-icons/ai"
 
 const ProjectCard = ({project, key} : {project: Project, key: number}) => {
 
@@ -91,6 +92,38 @@ const ProjectCard = ({project, key} : {project: Project, key: number}) => {
         text-overflow: ellipsis;
         font-style: normal;
       }
+
+      :hover .icons {
+        opacity: 100%;
+        scale: 1;
+      }
+    `
+
+    const IconWrapper = styled.div`
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      right: 0;
+      scale: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      opacity: 0;
+      margin-bottom: 5px;
+      transition: all 0.5s ease;
+    `
+
+    const TagsText = styled.div`
+      padding-left: 10px;
+      display: flex;
+      flex-direction: row;
+      font-size: 15px;
+      gap: 5px;
+    `
+
+    const Highlighted = styled.span`
+      background-color: #F433AB;
     `
 
     useEffect(() => {
@@ -126,6 +159,19 @@ const ProjectCard = ({project, key} : {project: Project, key: number}) => {
                         <CardBody className="body">
                             {project.description}
                         </CardBody>
+                        <IconWrapper className="icons">
+                          <TagsText>
+                            {project.tags.map((tag, i) => {
+                              return (
+                                <div>
+                                  <Highlighted>{tag}</Highlighted>
+                                  {(i < project.tags.length - 1) ? "," : " "}
+                                </div>
+                              )
+                            })}
+                          </TagsText>
+                          <AiFillGithub size={25} style={{paddingRight: "10px"}}/> 
+                        </IconWrapper>
                     </CardContent>
                 </ProjectBoxForeground>
             </ProjectBoxBackground>
