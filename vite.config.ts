@@ -1,11 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import vitePluginFaviconsInject from 'vite-plugin-favicons-inject';
+import {ViteFaviconsPlugin} from "vite-plugin-favicon"
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
-    vitePluginFaviconsInject('./src/assets/logo.png')
+    ViteFaviconsPlugin('./src/assets/logo.png')
   ]
 })
