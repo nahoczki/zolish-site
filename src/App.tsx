@@ -25,11 +25,16 @@ function App() {
         document.body.addEventListener('mousemove', onMouseMove);
 
         const $square = document.querySelector('.cursor__square');
+        const $smallSquare = document.querySelector('.cursor__square2');
 
         function onMouseMove(e: { pageX: number; pageY: number; }) {
-            gsap.to($square, .1, {
+            gsap.to($square, .2, {
                 x: e.pageX - 5,
                 y: e.pageY - 7
+            })
+            gsap.to($smallSquare, .1, {
+                x: e.pageX,
+                y: e.pageY - 2
             })
         }
     })

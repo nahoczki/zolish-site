@@ -71,9 +71,6 @@ const Home = () => {
                     - I am a <HighlightedText>passionate</HighlightedText> Software Engineer and a recent graduate from the University of Wisconsin Parkside with a bachelors in <HighlightedText>Computer Science</HighlightedText> and a minor in <HighlightedText>Web Development</HighlightedText>. Along with my bachelor and minor I have a few certificates, most notably in <HighlightedText>Mobile Development</HighlightedText>.
                 </BodyText>
                 <BodyText>
-                    - I have been working at The App Factory on the UWP campus for 4 years working with different clients around the Kenosha area creating apps and custom solutions.
-                </BodyText>
-                <BodyText>
                     Below are some of my personal projects
                 </BodyText>
                 <ProjectWrapper>

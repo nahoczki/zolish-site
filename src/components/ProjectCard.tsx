@@ -159,7 +159,9 @@ const ProjectCard = ({project, key} : {project: Project, key: number}) => {
                         <CardBody className="body">
                             {project.description}
                         </CardBody>
-                        <IconWrapper className="icons">
+                        <IconWrapper className="icons" onClick={() => {
+                            window.open(project.url as string, '_blank')
+                        }}>
                           <TagsText>
                             {project.tags.map((tag, i) => {
                               return (
